@@ -1,4 +1,4 @@
-package OOPS;
+package oops;
 class A {
     private int value;
     public void setValue(int value) {

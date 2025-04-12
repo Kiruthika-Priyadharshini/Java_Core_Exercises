@@ -1,8 +1,9 @@
+import oops.Customer;
+
 import java.io.*;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.concurrent.*;
-import java.util.stream.Collectors;
 
 public class ExcelReaderVirtualThreads {
 
@@ -24,12 +25,12 @@ public class ExcelReaderVirtualThreads {
         Optional<Customer> highestSalary = raeder.getHighestSalary(processedData);
         highestSalary.ifPresent(c -> System.out.println("Highest Salary in Data" + c));
 
-//        Optional<Customer> highestInJudiciary = getHighestSalaryInDepartment(processedData, "JUDICIARY");
+//        Optional<oops.Customer> highestInJudiciary = getHighestSalaryInDepartment(processedData, "JUDICIARY");
 //        highestInJudiciary.ifPresent(c -> System.out.println("Highest Salary in JUDICIARY Department" + c));
 
         Map<String, Customer> highestSalaryByDept = raeder.getHighestSalaryByDepartment(processedData);
         highestSalaryByDept.forEach((dept, cust) -> {
-                    String a = "Name:".concat(cust.firstName).concat(cust.lastName).concat(" Salary:").concat(Double.toString(cust.getSalary()));
+                    String a = "Name:".concat(cust.getFirstName()).concat(cust.getLastName()).concat(" Salary:").concat(Double.toString(cust.getSalary()));
                     System.out.println("Department:" + dept +" "+a.replaceAll("\"",""));
                 }
         );
@@ -104,10 +105,10 @@ public class ExcelReaderVirtualThreads {
                 .max(Comparator.comparingDouble(Customer::getSalary));
     }
 
-//    public static Optional<Customer> getHighestSalaryInDepartment(List<Customer> customers, String department) {
+//    public static Optional<oops.Customer> getHighestSalaryInDepartment(List<oops.Customer> customers, String department) {
 //        return customers.stream()
 //                .filter(c -> c.getDepartment().equalsIgnoreCase(department))
-//                .max(Comparator.comparingDouble(Customer::getSalary));
+//                .max(Comparator.comparingDouble(oops.Customer::getSalary));
 //    }
 
     public  Map<String, Customer> getHighestSalaryByDepartment(List<Customer> customers) {

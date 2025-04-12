@@ -1,4 +1,4 @@
-package OOPS;
+package oops;
 
 abstract class Calculator1 {
     public int add(int a, int b) {

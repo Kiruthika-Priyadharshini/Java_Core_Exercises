@@ -1,4 +1,4 @@
-package OOPS;
+package oops;
 
     interface A1 {
         default void method() {
