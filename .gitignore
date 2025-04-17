@@ -42,3 +42,8 @@ bin/
 ### Mac OS ###
 .DS_Store
 *.class
+*.class
+*.jar
+*.war
+*.ear
+*.log
