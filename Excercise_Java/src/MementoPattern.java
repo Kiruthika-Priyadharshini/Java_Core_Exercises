@@ -62,5 +62,7 @@ public class MementoPattern{
         System.out.println("\nRestoring to previous states...");
         originator.restoreStateFromMemento(caretaker.get(0)); //2
         originator.restoreStateFromMemento(caretaker.get(1)); //3
+        System.out.println("\nRestoring to previous states..."+originator.getState());
+
     }
 }
